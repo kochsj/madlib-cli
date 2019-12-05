@@ -15,3 +15,5 @@ print('*'*5, ' '*39, '*'*5)
 print('*'*51)
 print('*'*51)
 
+f = open("example.txt")
+print(f.read())
