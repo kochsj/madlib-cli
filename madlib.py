@@ -21,26 +21,29 @@
 f = open("example.txt").read()
 
 def create_list_of_inputs(file):
-    list_of_prompts = [('', 0, 0)]
+    list_of_prompts = [('', 0, -1)]
     idx = 1
     left_idx = 0
     while '}' in file[left_idx:]:
         left_idx = file.find('{', (list_of_prompts[idx-1][2]+1))
         right_idx = file.find('}', (list_of_prompts[idx-1][2]+1))
-        list_of_prompts.append((file[left_idx:right_idx], left_idx, right_idx))
+        list_of_prompts.append((file[left_idx:right_idx + 1], left_idx, right_idx))
         # file = file[left_idx:]
         idx += 1
     # print(list_of_prompts)
-    # return list_of_prompts
-create_list_of_inputs(f)
+    return list_of_prompts
+# create_list_of_inputs(f)
 def construct_the_madlib(file):
     madlib = ''
     prompt_list = create_list_of_inputs(file)
     idx = 1
-    while idx < (len(prompt_list) - 1):
-        response = input('Enter ' + prompt_list[idx][0])
+    while idx < (len(prompt_list)-1):
+        response = input('Enter ' + prompt_list[idx][0] + '')
         madlib += file[(prompt_list[idx-1][2]+1):prompt_list[idx][1]] + response
-
+        idx += 1
+    madlib += file[(prompt_list[idx-1][2]+1):]
+    print(madlib)
+construct_the_madlib(f)
 
 # while True:
 #     response = input('...').lower()
