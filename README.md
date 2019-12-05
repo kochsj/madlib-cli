@@ -38,12 +38,12 @@ A welcome message will appear. Follow the instructions. Have fun!
 
 
 ## Functionality/Architecture
-This module requires a template file. Inside the template, required imputs are defined inside of curly braces '{ }'.
-The template MadLib™ file is opened, read by a function and turned into a string usable by the module.
-From the string the defined imputs are read and stored in a list to be used to prompt the user for a response.
-The complete list is used to ask the user for imput, then the resulting imput is appended in the place of the imput definitions (from the template, inside of the curly braces).
-After all imputs are handled, the resulting Madlib™ is printed in the CLI.
-Additionally a new file, new_madlib.txt, is written in the directory with the resulting Madlib™ as its contents.
+- This module requires a template file. Inside the template, required imputs are defined inside of curly braces '{ }'.<br>
+- The template MadLib™ file is opened, read by a function and turned into a string usable by the module.<br>
+- From the string the defined imputs are read and stored in a list to be used to prompt the user for a response.<br>
+- The complete list is used to ask the user for imput, then the resulting imput is appended in the place of the imput definitions (from the template, inside of the curly braces).<br>
+- After all imputs are handled, the resulting Madlib™ is printed in the CLI.<br>
+- Additionally a new file, new_madlib.txt, is written in the directory with the resulting Madlib™ as its contents.
 
 ## Change Log
 -- Wed Dec 04 2019 16:40:05 --<br>Built out print_and_create_madlib_file, print_intro_message, construct_the_madlib, create_list_of_inputs functions. Sucessful testing.
