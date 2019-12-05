@@ -17,19 +17,20 @@
 # print('*'*51)
 # print('*'*51)
 
-f = open("example.txt").read().find('{')
-print(f)
+f = open("example.txt").read()
+print(len(f))
 # list_of_prompts = ['an adjective: ', 'an adjective: ', 'a first name: ', 'a past-tense verb: ', 'a first name: ', 'an adjective: ', 'an adjective: ', 'a plural noun: ', 'a large animal: ', '']
 
 def create_list_of_inputs(file):
     list_of_prompts = []
-    while len(list_of_prompts) < 1:
+    while '}' in file:
         right_idx = file.find('{')
         left_idx = file.find('}') + 1
         list_of_prompts.append(file[right_idx:left_idx])
-    print(list_of_prompts)
+        file = file[left_idx:]
+    return list_of_prompts
 
-create_list_of_inputs('{Adjectives}')
+create_list_of_inputs(f)
 # while True:
 #     input_counter = 0
 #     a = input('Name ' + list_of_prompts[input_counter])
