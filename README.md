@@ -46,5 +46,5 @@ After all imputs are handled, the resulting Madlib™ is printed in the CLI.
 Additionally a new file, new_madlib.txt, is written in the directory with the resulting Madlib™ as its contents.
 
 ## Change Log
--- Wed Dec 04 2019 16:40:05 --<br>Built out print_and_create_madlib_file, print_intro_message, construct_the_madlib, create_list_of_inputs functions. Sucessful testing.
-
+-- Wed Dec 04 2019 16:40:05 --<br>Built out print_and_create_madlib_file, print_intro_message, construct_the_madlib, create_list_of_inputs functions.
+-- Mon Dec 09 2019 09:31:40 -- <br>Created three tests that test the file for contents and test that there is a file. Sucessful testing.

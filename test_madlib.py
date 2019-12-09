@@ -20,6 +20,8 @@ def test_file_with_inputs():
     assert len(list_of_inputs) > 1
 
 
+# Attempt to use inputs in the test using mock_input:
+
 # https://code-maven.com/mocking-input-and-output-for-python-testing
 
 # def test_madlib():
