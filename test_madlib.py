@@ -1,7 +1,23 @@
-# from madlib import print_and_create_madlib_file, print_intro_message, construct_the_madlib, create_list_of_inputs
-from madlib import construct_the_madlib, create_list_of_inputs
+from testable_madlib import create_list_of_inputs
 
+# Brainstorm possible tests
+# - In order to get any tests running, can you think of ways to test aspects of your code that do not use input()?
 
+# Reading the file at the start - has to be template.txt in same directory
+def test_there_is_something_in_the_file():
+    expected = 'Test template\n'
+    assert open('test_template.txt').read() == expected
+# list of prompts in create_list_of_inputs needs to have more than 1 item in the list.
+def test_file_with_no_curly():
+    file = open('test_template.txt').read()
+    expected = 1
+    actual = len(create_list_of_inputs(file))
+    assert expected == actual
+
+def test_file_with_inputs():
+    file = open('template.txt').read()
+    list_of_inputs = create_list_of_inputs(file)
+    assert len(list_of_inputs) > 1
 
 
 # https://code-maven.com/mocking-input-and-output-for-python-testing
