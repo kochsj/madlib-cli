@@ -62,20 +62,4 @@ def print_intro_message():
 ########################
 # file operations:
 ########################
-
-print_intro_message()
-
-try:
-    file = open("template.txt").read()
-except FileNotFoundError:
-    print('No madlib template file found. Please assign the correct file to the file variable.')
-    sys.exit()
-
-while True:
-    response = input('--> ').lower()
-    if response == 'quit':
-        break
-    if response == 'start':
-        madlib_handler(file)
-    else:
-        print("Please type 'start' to get started. Or 'quit' to quit")
+# See madlib.py
